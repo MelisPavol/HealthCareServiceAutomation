@@ -13,12 +13,28 @@ public class HomePage {
         PageFactory.initElements(driver, this); //init all elements on this page ,
     };
 
-//    @FindBy(xpath = "//")
-//    private WebElement element1;
-//
-//    public void clickElement1(){
-//        element1.click();
-//    }
+    @FindBy(xpath = "//a[@id='btn-make-appointment']")
+    private WebElement makeAppointmentButton;
+
+    @FindBy(xpath = "//nav[@class='active']")
+    private WebElement hamburgerMenu;
+
+    @FindBy(xpath = "///a[normalize-space()='Login']")
+    private WebElement loginButton;
+
+    public LoginPage loginButton(){
+        loginButton.click();
+        return new LoginPage(driver);
+    }
+
+    public void hamburgerMenu(){
+        hamburgerMenu.click();
+    }
+
+    public LoginPage makeAppointmentButton(){
+        makeAppointmentButton.click();
+        return new LoginPage(driver);
+    }
 
 }
 
