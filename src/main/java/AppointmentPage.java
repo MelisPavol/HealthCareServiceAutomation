@@ -64,7 +64,9 @@ public class AppointmentPage {
     public void clickHealtCareProgramNone(){
         healtCareProgramNoneRadioButton.click();
     }
-
+    public String getTextMakeAppointment(){
+        return makeAppointText.getText();
+    }
 
 
 }
