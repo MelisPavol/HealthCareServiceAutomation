@@ -26,5 +26,19 @@ public class SingInTest extends BaseTest{
         assertEquals("Make Appointment", appointmentPage.getTextMakeAppointment());
     }
 
+    @Test
+    void test_TC_2_Invalid_Sing_in(){
+        var appointmentPage = homePage
+                .makeAppointmentButton()
+                .enterUserName(TestValues.TEST_INVALID_USERNAME)
+                .enterpassword(TestValues.TEST_INVALID_PASSWORD)
+                .loginButtonOnLoginPage();
+
+        assertEquals("Login failed! Please ensure the username and password are valid.", appointmentPage.getTextLoginFailed());
+
+    }
+
+
+
 
 }

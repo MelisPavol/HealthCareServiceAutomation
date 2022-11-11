@@ -37,6 +37,8 @@ public class AppointmentPage {
     @FindBy(xpath = "//div[@class='col-sm-12 text-center'] /h2")
     private WebElement makeAppointText;
 
+    @FindBy(xpath = "//p[@class='lead text-danger']")
+    private WebElement getTextLoginFailed;
 
     public void clickDropDown(){
         dropDownSelector.click();
@@ -67,6 +69,8 @@ public class AppointmentPage {
     public String getTextMakeAppointment(){
         return makeAppointText.getText();
     }
-
+    public String getTextLoginFailed(){
+        return getTextLoginFailed.getText();
+    }
 
 }
