@@ -9,7 +9,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this); //init all elements on this page ,
-    };
+    }
 
 
     @FindBy(xpath = "//input[@id='txt-username']")
@@ -22,14 +22,16 @@ public class LoginPage {
     private WebElement loginButtonOnLoginPage;
 
 
-    public void enterUserName(String userName){
+    public LoginPage enterUserName(String userName){
         userNameTextField.click();
         userNameTextField.sendKeys(userName);
+        return this;
     }
 
-    public void enterpassword(String password){
+    public LoginPage enterpassword(String password){
         passwordTextField.click();
         passwordTextField.sendKeys(password);
+        return this;
     }
 
     public AppointmentPage loginButtonOnLoginPage(){

@@ -20,7 +20,8 @@ public class BaseTest {
 
     @AfterTest
     void closeBrowser() {
-        //    driver.quit();
+          driver.close(); //Close webdriver!
+        // driver.quit(); //Close chrome  browser
     }
 
 
