@@ -25,7 +25,7 @@ public class AppointmentPage {
     @FindBy(xpath = "//label[@for='chk_hospotal_readmission']")
     private WebElement applyForHospitalReadmission;
 
-    @FindBy(xpath = "//label[@xpath='1']")
+    @FindBy(xpath = "//input[@id='radio_program_medicare']")
     private WebElement healtCareProgramMedicareRadioButton;
 
     @FindBy(xpath = "//input[@value='Medicaid']")
@@ -40,37 +40,91 @@ public class AppointmentPage {
     @FindBy(xpath = "//p[@class='lead text-danger']")
     private WebElement getTextLoginFailed;
 
-    public void clickDropDown(){
+    @FindBy(xpath = "//input[@id='txt_visit_date']")
+    private WebElement clickVisitDate;
+
+    @FindBy(xpath = "//td[normalize-space()='23']")
+    private WebElement enterVisitDate;
+
+    @FindBy(xpath = "//div[@class='datepicker-days']//th[@class='next'][normalize-space()='»']")
+    private WebElement nextMounth;
+
+    @FindBy(xpath = "//div[@class='datepicker-days']//th[@class='prev'][normalize-space()='«']")
+    private WebElement prevMounth;
+
+    @FindBy(xpath = "//textarea[@id='txt_comment']")
+    private WebElement clickCommentTextField;
+
+    @FindBy(xpath = "//button[@id='btn-book-appointment']")
+    private WebElement clickBookAppointment;
+
+
+    public AppointmentPage clickDropDown(){
         dropDownSelector.click();
+        return this;
     }
-    public void clickTokyoCuraHealtCareCenter(){
+    public AppointmentPage clickTokyoCuraHealtCareCenter(){
         tokyoCuraHealtCareCenter.click();
+        return this;
     }
-    public void clickHongkongCuraHealtCareCenter(){
+    public AppointmentPage clickHongkongCuraHealtCareCenter(){
         hongkongCuraHealtCareCenter.click();
+        return this;
     }
 
-    public void clickSeoulCuraHealtCareCenter(){
+    public AppointmentPage clickSeoulCuraHealtCareCenter(){
         seoulCuraHealtCareCenter.click();
+        return this;
     }
 
-    public void clickApplyForHospitalreadmission (){
+    public AppointmentPage clickApplyForHospitalreadmission (){
         applyForHospitalReadmission.click();
+        return this;
     }
-    public void clickHealtCareProgramMedicare(){
+    public AppointmentPage clickHealtCareProgramMedicare(){
         healtCareProgramMedicareRadioButton.click();
+        return this;
     }
-    public void clickHealtCareProgramMedicaid(){
+    public AppointmentPage clickHealtCareProgramMedicaid(){
         healtCareProgramMedicaidRadioButton.click();
+        return this;
     }
-    public void clickHealtCareProgramNone(){
+    public AppointmentPage clickHealtCareProgramNone(){
         healtCareProgramNoneRadioButton.click();
+        return this;
     }
     public String getTextMakeAppointment(){
         return makeAppointText.getText();
     }
     public String getTextLoginFailed(){
         return getTextLoginFailed.getText();
+    }
+    public AppointmentPage clickVisitDate(){
+        clickVisitDate.click();
+        return this;
+    }
+    public AppointmentPage enterVisitDate(){
+        enterVisitDate.click();
+        return this;
+    }
+    public AppointmentPage nextMount(){
+        nextMounth.click();
+        return this;
+    }
+    public AppointmentPage prevMount(){
+        prevMounth.click();
+        return this;
+    }
+
+    public AppointmentPage clickCommentTF(String comment){
+        //clickCommentTextField.click();
+        clickCommentTextField.sendKeys(comment);
+       return this;
+    }
+
+    public SummaryPage clickButtonAppointment(){
+        clickBookAppointment.click();
+        return new SummaryPage(driver);
     }
 
 }
