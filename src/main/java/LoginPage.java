@@ -35,7 +35,7 @@ public class LoginPage {
         return this;
     }
 
-    public AppointmentPage loginButtonOnLoginPage(){
+    public AppointmentPage clickButtonOnLoginPage(){
         loginButtonOnLoginPage.click();
         return new AppointmentPage(driver);
     }

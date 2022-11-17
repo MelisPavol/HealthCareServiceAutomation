@@ -14,16 +14,16 @@ public class AppointmentPage {
     private WebElement dropDownSelector;
 
     @FindBy(xpath = "//option[@value='Tokyo CURA Healthcare Center']")
-    private WebElement tokyoCuraHealtCareCenter;
+    private WebElement tokyoCuraHealtCareCenterDropDownElement;
 
     @FindBy(xpath = "//option[@value='Hongkong CURA Healthcare Center']")
-    private WebElement hongkongCuraHealtCareCenter;
+    private WebElement hongkongCuraHealtCareCenterDropDownElement;
 
     @FindBy(xpath = "//option[@value='Seoul CURA Healthcare Center']")
-    private WebElement seoulCuraHealtCareCenter;
+    private WebElement seoulCuraHealtCareCenterDropDownElement;
 
     @FindBy(xpath = "//label[@for='chk_hospotal_readmission']")
-    private WebElement applyForHospitalReadmission;
+    private WebElement applyForHospitalReadmissionCheckBox;
 
     @FindBy(xpath = "//input[@id='radio_program_medicare']")
     private WebElement healtCareProgramMedicareRadioButton;
@@ -41,22 +41,22 @@ public class AppointmentPage {
     private WebElement textLoginFailed;
 
     @FindBy(xpath = "//input[@id='txt_visit_date']")
-    private WebElement clickVisitDate;
+    private WebElement calendar;
 
     @FindBy(xpath = "//td[normalize-space()='23']")
-    private WebElement enterVisitDate;
+    private WebElement visitDate;
 
     @FindBy(xpath = "//div[@class='datepicker-days']//th[@class='next'][normalize-space()='»']")
-    private WebElement nextMounth;
+    private WebElement nextMounthArrow;
 
     @FindBy(xpath = "//div[@class='datepicker-days']//th[@class='prev'][normalize-space()='«']")
-    private WebElement prevMounth;
+    private WebElement prevMounthArrow;
 
     @FindBy(xpath = "//textarea[@id='txt_comment']")
     private WebElement commentTextField;
 
     @FindBy(xpath = "//button[@id='btn-book-appointment']")
-    private WebElement bookAppointment;
+    private WebElement bookAppointmentButton;
 
 
     public AppointmentPage clickDropDown(){
@@ -64,21 +64,21 @@ public class AppointmentPage {
         return this;
     }
     public AppointmentPage clickTokyoCuraHealtCareCenter(){
-        tokyoCuraHealtCareCenter.click();
+        tokyoCuraHealtCareCenterDropDownElement.click();
         return this;
     }
     public AppointmentPage clickHongkongCuraHealtCareCenter(){
-        hongkongCuraHealtCareCenter.click();
+        hongkongCuraHealtCareCenterDropDownElement.click();
         return this;
     }
 
     public AppointmentPage clickSeoulCuraHealtCareCenter(){
-        seoulCuraHealtCareCenter.click();
+        seoulCuraHealtCareCenterDropDownElement.click();
         return this;
     }
 
     public AppointmentPage clickApplyForHospitalreadmission (){
-        applyForHospitalReadmission.click();
+        applyForHospitalReadmissionCheckBox.click();
         return this;
     }
     public AppointmentPage clickHealtCareProgramMedicare(){
@@ -100,19 +100,19 @@ public class AppointmentPage {
         return textLoginFailed.getText();
     }
     public AppointmentPage clickVisitDate(){
-        clickVisitDate.click();
+        calendar.click();
         return this;
     }
     public AppointmentPage enterVisitDate(){
-        enterVisitDate.click();
+        visitDate.click();
         return this;
     }
     public AppointmentPage nextMount(){
-        nextMounth.click();
+        nextMounthArrow.click();
         return this;
     }
     public AppointmentPage prevMount(){
-        prevMounth.click();
+        prevMounthArrow.click();
         return this;
     }
 
@@ -122,7 +122,7 @@ public class AppointmentPage {
     }
 
     public SummaryPage clickButtonAppointment(){
-        bookAppointment.click();
+        bookAppointmentButton.click();
         return new SummaryPage(driver);
     }
 

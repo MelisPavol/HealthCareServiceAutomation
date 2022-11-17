@@ -10,7 +10,7 @@ public class SingInTest extends BaseTest {
         var loginPage = homePage.makeAppointmentButton();
         loginPage.enterUserName(TestValues.TEST_VALID_USERNAME);
         loginPage.enterpassword(TestValues.TEST_VALID_PASSWORD);
-        var appointmentPage = loginPage.loginButtonOnLoginPage();
+        var appointmentPage = loginPage.clickButtonOnLoginPage();
 
         assertEquals("Make Appointment", appointmentPage.getTextMakeAppointment());
     }
@@ -21,7 +21,7 @@ public class SingInTest extends BaseTest {
                 .makeAppointmentButton()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
                 .enterpassword(TestValues.TEST_VALID_PASSWORD)
-                .loginButtonOnLoginPage();
+                .clickButtonOnLoginPage();
 
         assertEquals("Make Appointment", appointmentPage.getTextMakeAppointment());
     }
@@ -32,7 +32,7 @@ public class SingInTest extends BaseTest {
                 .makeAppointmentButton()
                 .enterUserName(TestValues.TEST_INVALID_USERNAME)
                 .enterpassword(TestValues.TEST_INVALID_PASSWORD)
-                .loginButtonOnLoginPage();
+                .clickButtonOnLoginPage();
 
         assertEquals("Login failed! Please ensure the username and password are valid.", appointmentPage.getTextLoginFailed());
     }
@@ -44,7 +44,7 @@ public class SingInTest extends BaseTest {
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
                 .enterpassword(TestValues.TEST_VALID_PASSWORD)
-                .loginButtonOnLoginPage()
+                .clickButtonOnLoginPage()
                 .getTextMakeAppointment();
 
         assertEquals("Make Appointment", textMakeAppointment);
@@ -56,7 +56,7 @@ public class SingInTest extends BaseTest {
                 .makeAppointmentButton()
                 .enterUserName(TestValues.TEST_INVALID_USERNAME)
                 .enterpassword(TestValues.TEST_VALID_PASSWORD)
-                .loginButtonOnLoginPage();
+                .clickButtonOnLoginPage();
 
         assertEquals("Login failed! Please ensure the username and password are valid.", appointmentPage.getTextLoginFailed());
     }
@@ -67,7 +67,7 @@ public class SingInTest extends BaseTest {
                 .makeAppointmentButton()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
                 .enterpassword(TestValues.TEST_INVALID_PASSWORD)
-                .loginButtonOnLoginPage();
+                .clickButtonOnLoginPage();
 
         assertEquals("Login failed! Please ensure the username and password are valid.", appointmentPage.getTextLoginFailed());
     }
@@ -78,20 +78,22 @@ public class SingInTest extends BaseTest {
                 .makeAppointmentButton()
                 .enterUserName(TestValues.TEST_INVALID_USERNAME_EMPTY)
                 .enterpassword(TestValues.TEST_VALID_PASSWORD)
-                .loginButtonOnLoginPage();
+                .clickButtonOnLoginPage();
 
         assertEquals("Login failed! Please ensure the username and password are valid.", appointmentPage.getTextLoginFailed());
     }
 
     @Test
     void test_TC_7_Invalid_test_Empty_textfield_password() {
-        var appointmentPage = homePage
+        var errorMessage = homePage
                 .makeAppointmentButton()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
                 .enterpassword(TestValues.TEST_INVALID_PASSWORD_EMPTY)
-                .loginButtonOnLoginPage();
-
-        assertEquals("Login failed! Please ensure the username and password are valid.", appointmentPage.getTextLoginFailed());
+                .clickButtonOnLoginPage()
+                .getTextLoginFailed();
+//- do promennej textLower sme ulozili vysledek feunkce
+////        kterou sme urobili z promennej text
+        assertEquals("Login failed! Please ensure the username and password are valid.", errorMessage);
     }
 
     @Test
@@ -100,7 +102,7 @@ public class SingInTest extends BaseTest {
                 .makeAppointmentButton()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
                 .enterpassword(TestValues.TEST_VALID_PASSWORD)
-                .loginButtonOnLoginPage()
+                .clickButtonOnLoginPage()
                 .clickTokyoCuraHealtCareCenter()
                 .clickApplyForHospitalreadmission()
                 .clickHealtCareProgramMedicare()
