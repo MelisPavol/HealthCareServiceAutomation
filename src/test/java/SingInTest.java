@@ -39,14 +39,15 @@ public class SingInTest extends BaseTest {
 
     @Test
     void test_HE_002_TC_3_Valid_Sing_in_from_hamburger_menu() {
-        var appointmentPage = homePage
+        var textMakeAppointment = homePage
                 .hamburgerMenu()
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
                 .enterpassword(TestValues.TEST_VALID_PASSWORD)
-                .loginButtonOnLoginPage();
+                .loginButtonOnLoginPage()
+                .getTextMakeAppointment();
 
-        assertEquals("Make Appointment", appointmentPage.getTextMakeAppointment());
+        assertEquals("Make Appointment", textMakeAppointment);
     }
 
     @Test
@@ -108,7 +109,7 @@ public class SingInTest extends BaseTest {
                 .nextMount()
                 .nextMount()
                 .enterVisitDate()
-                .clickCommentTF(TestValues.TEST_COMMENT_TEXTFIELD)
+                .commentTextField(TestValues.TEST_COMMENT_TEXTFIELD)
                 .clickButtonAppointment()
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
@@ -116,4 +117,5 @@ public class SingInTest extends BaseTest {
         assertEquals(facilityTokyoCURAAssert,"Tokyo CURA Healthcare Center");
 
     }
+
 }

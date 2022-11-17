@@ -38,7 +38,7 @@ public class AppointmentPage {
     private WebElement makeAppointText;
 
     @FindBy(xpath = "//p[@class='lead text-danger']")
-    private WebElement getTextLoginFailed;
+    private WebElement textLoginFailed;
 
     @FindBy(xpath = "//input[@id='txt_visit_date']")
     private WebElement clickVisitDate;
@@ -53,10 +53,10 @@ public class AppointmentPage {
     private WebElement prevMounth;
 
     @FindBy(xpath = "//textarea[@id='txt_comment']")
-    private WebElement clickCommentTextField;
+    private WebElement commentTextField;
 
     @FindBy(xpath = "//button[@id='btn-book-appointment']")
-    private WebElement clickBookAppointment;
+    private WebElement bookAppointment;
 
 
     public AppointmentPage clickDropDown(){
@@ -97,7 +97,7 @@ public class AppointmentPage {
         return makeAppointText.getText();
     }
     public String getTextLoginFailed(){
-        return getTextLoginFailed.getText();
+        return textLoginFailed.getText();
     }
     public AppointmentPage clickVisitDate(){
         clickVisitDate.click();
@@ -116,14 +116,13 @@ public class AppointmentPage {
         return this;
     }
 
-    public AppointmentPage clickCommentTF(String comment){
-        //clickCommentTextField.click();
-        clickCommentTextField.sendKeys(comment);
-       return this;
+    public AppointmentPage commentTextField(String comment){
+        commentTextField.sendKeys(comment);
+        return this;
     }
 
     public SummaryPage clickButtonAppointment(){
-        clickBookAppointment.click();
+        bookAppointment.click();
         return new SummaryPage(driver);
     }
 
