@@ -25,6 +25,18 @@ public class HistoryPage {
     @FindBy(xpath = "//p[ text() ='No']")
     private WebElement noApplyForRealmisionCheckBox;
 
+    @FindBy(xpath = "//p[ text() ='Medicaid']")
+    private WebElement healthCareMedicaidAssert;
+
+    @FindBy(xpath = "//p[ text() ='None']")
+    private WebElement healtCareNoneAssert;
+
+    @FindBy(xpath = "//p[ text() ='Medicare']")
+    private WebElement haeltCareMedicareAssert;
+
+    @FindBy(xpath = "//p[@id='comment']")
+    private WebElement comment;
+
     public String getTextFacilityTokyoCURA(){
        return facilityTokyoCURA.getText();
     }
@@ -37,7 +49,13 @@ public class HistoryPage {
 
     public String getYesApplyCheckBox (){ return yesApplyForRealmissionCheckBox.getText();}
 
+    public String getTextHaelthMedicaidCheckBox(){return healthCareMedicaidAssert.getText();}
 
+    public String getTextHealthNoneCheckBox(){return healtCareNoneAssert.getText();}
+
+    public String getTextHealthMadicareCheckBox(){return healthCareMedicaidAssert.getText();}
+
+    public String getTextCommnet(){return comment.getText();}
 
 
 }
