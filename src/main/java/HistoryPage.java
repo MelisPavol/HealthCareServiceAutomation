@@ -43,7 +43,7 @@ public class HistoryPage {
 
     public String getTextfacilityHongkongCURA() { return facilityHongkongCura.getText();}
 
-    public String getTEXTFacilitySeoulCURA() { return facilitySeoulCURA.getText();}
+    public String getTexTFacilitySeoulCURA() { return facilitySeoulCURA.getText();}
 
     public String getNoApplyCheckBox(){ return noApplyForRealmisionCheckBox.getText();}
 
@@ -53,7 +53,7 @@ public class HistoryPage {
 
     public String getTextHealthNoneCheckBox(){return healtCareNoneAssert.getText();}
 
-    public String getTextHealthMadicareCheckBox(){return healthCareMedicaidAssert.getText();}
+    public String getTextHealthMadicareCheckBox(){return haeltCareMedicareAssert.getText();}
 
     public String getTextCommnet(){return comment.getText();}
 

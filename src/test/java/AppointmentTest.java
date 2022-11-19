@@ -72,7 +72,7 @@ public class AppointmentTest extends BaseTest{
                 .clickButtonAppointment()
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
-                .getTEXTFacilitySeoulCURA();
+                .getTexTFacilitySeoulCURA();
 
         assertEquals(facilitySeoulCURAAssert,"Seoul CURA Healthcare Center");
 
@@ -170,13 +170,145 @@ public class AppointmentTest extends BaseTest{
         assertEquals(getTextComment,"");
 
     }
+    @Test
+    void test_HE_003_TC_8_Valid_Login_From_Hamburger_Medicaid_Tokyo() {
+        var getTextFacilityTokyoCURA = homePage
+                .hamburgerMenu()
+                .loginFromHamburgerMenu()
+                .enterUserName(TestValues.TEST_VALID_USERNAME)
+                .enterpassword(TestValues.TEST_VALID_PASSWORD)
+                .clickButtonOnLoginPage()
+                .clickTokyoCuraHealtCareCenter()
+                .clickApplyForHospitalreadmission()
+                .clickHealtCareProgramMedicaid()
+                .clickVisitDate()
+                .nextMount()
+                .nextMount()
+                .nextMount()
+                .enterVisitDate()
+                .commentTextField(TestValues.TEST_COMMENT_TEXTFIELD)
+                .clickButtonAppointment()
+                .clickHamburgerMenuSummaryPage()
+                .historyButton()
+                .getTextFacilityTokyoCURA();
+        assertEquals(getTextFacilityTokyoCURA,"Tokyo CURA Healthcare Center");
+    }
 
+    @Test
+    void test_HE_003_TC_9_Valid_Login_From_Hamburger_Menu_all_filled_out_Hongkong() {
+        var getTextfacilityHongkongCURA = homePage
+                .hamburgerMenu()
+                .loginFromHamburgerMenu()
+                .enterUserName(TestValues.TEST_VALID_USERNAME)
+                .enterpassword(TestValues.TEST_VALID_PASSWORD)
+                .clickButtonOnLoginPage()
+                .clickHongkongCuraHealtCareCenter()
+                .clickApplyForHospitalreadmission()
+                .clickHealtCareProgramMedicaid()
+                .clickVisitDate()
+                .nextMount()
+                .nextMount()
+                .nextMount()
+                .enterVisitDate()
+                .commentTextField(TestValues.TEST_COMMENT_TEXTFIELD)
+                .clickButtonAppointment()
+                .clickHamburgerMenuSummaryPage()
+                .historyButton()
+                .getTextfacilityHongkongCURA();
+        assertEquals(getTextfacilityHongkongCURA,"Hongkong CURA Healthcare Center");
+    }
 
-
-
-
-
-
+    @Test
+    void test_HE_003_TC_10_Valid_Login_From_Hamburger_Menu_all_filled_out_Seoul() {
+        var getTexTFacilitySeoulCURA = homePage
+                .hamburgerMenu()
+                .loginFromHamburgerMenu()
+                .enterUserName(TestValues.TEST_VALID_USERNAME)
+                .enterpassword(TestValues.TEST_VALID_PASSWORD)
+                .clickButtonOnLoginPage()
+                .clickSeoulCuraHealtCareCenter()
+                .clickApplyForHospitalreadmission()
+                .clickHealtCareProgramMedicaid()
+                .clickVisitDate()
+                .nextMount()
+                .nextMount()
+                .nextMount()
+                .enterVisitDate()
+                .commentTextField(TestValues.TEST_COMMENT_TEXTFIELD)
+                .clickButtonAppointment()
+                .clickHamburgerMenuSummaryPage()
+                .historyButton()
+                .getTexTFacilitySeoulCURA();
+        assertEquals(getTexTFacilitySeoulCURA,"Seoul CURA Healthcare Center");
+    }
+    @Test
+    void test_HE_003_TC_11_Valid_Login_From_Hamburger_No_Apply_for_hospital_readmission() {
+        var noApplyCheckBox = homePage
+                .hamburgerMenu()
+                .loginFromHamburgerMenu()
+                .enterUserName(TestValues.TEST_VALID_USERNAME)
+                .enterpassword(TestValues.TEST_VALID_PASSWORD)
+                .clickButtonOnLoginPage()
+                .clickSeoulCuraHealtCareCenter()
+                .clickHealtCareProgramMedicaid()
+                .clickVisitDate()
+                .nextMount()
+                .nextMount()
+                .nextMount()
+                .enterVisitDate()
+                .commentTextField(TestValues.TEST_COMMENT_TEXTFIELD)
+                .clickButtonAppointment()
+                .clickHamburgerMenuSummaryPage()
+                .historyButton()
+                .getNoApplyCheckBox();
+        assertEquals(noApplyCheckBox,"No");
+    }
+    @Test
+    void test_HE_003_TC_12_Valid_Login_From_Hamburger_Menu_Medial_Care_MediaCare() {
+        var getTextHealthMadicareCheckBox = homePage
+                .hamburgerMenu()
+                .loginFromHamburgerMenu()
+                .enterUserName(TestValues.TEST_VALID_USERNAME)
+                .enterpassword(TestValues.TEST_VALID_PASSWORD)
+                .clickButtonOnLoginPage()
+                .clickSeoulCuraHealtCareCenter()
+                .clickApplyForHospitalreadmission()
+                .clickHealtCareProgramMedicare()
+                .clickVisitDate()
+                .nextMount()
+                .nextMount()
+                .nextMount()
+                .enterVisitDate()
+                .commentTextField(TestValues.TEST_COMMENT_TEXTFIELD)
+                .clickButtonAppointment()
+                .clickHamburgerMenuSummaryPage()
+                .historyButton()
+                .getTextHealthMadicareCheckBox();
+        assertEquals(getTextHealthMadicareCheckBox,"Medicare");
+    }
+    @Test
+    void test_HE_003_TC_13_Valid_Login_From_Hamburger_Menu_Medial_Care_MediaCare() {
+        var getTextHealthMadicareCheckBox = homePage
+                .hamburgerMenu()
+                .loginFromHamburgerMenu()
+                .enterUserName(TestValues.TEST_VALID_USERNAME)
+                .enterpassword(TestValues.TEST_VALID_PASSWORD)
+                .clickButtonOnLoginPage()
+                .clickSeoulCuraHealtCareCenter()
+                .clickApplyForHospitalreadmission()
+                .clickHealtCareProgramMedicare()
+                .clickVisitDate()
+                .nextMount()
+                .nextMount()
+                .nextMount()
+                .enterVisitDate()
+                .commentTextField(TestValues.TEST_COMMENT_TEXTFIELD)
+                .clickButtonAppointment()
+                .clickHamburgerMenuSummaryPage()
+                .historyButton()
+                .getTextHealthMadicareCheckBox();
+        assertEquals(getTextHealthMadicareCheckBox,"Medicare");
+    }
 
 
 }
