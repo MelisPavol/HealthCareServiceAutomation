@@ -288,7 +288,7 @@ public class AppointmentTest extends BaseTest{
     }
     @Test
     void test_HE_003_TC_13_Valid_Login_From_Hamburger_Menu_Medial_Care_Medicaid() {
-        var getTextHaelthMedicaidCheckBox = homePage
+        var TextHaelthMedicaidCheckBox = homePage
                 .hamburgerMenu()
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
@@ -307,11 +307,11 @@ public class AppointmentTest extends BaseTest{
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
                 .getTextHaelthMedicaidCheckBox();
-        assertEquals(getTextHaelthMedicaidCheckBox,"Medicaid");
+        assertEquals(TextHaelthMedicaidCheckBox,"Medicaid");
     }
     @Test
     void test_HE_003_TC_14_Valid_Login_From_Hamburger_Menu_Medial_Care_None() {
-        var getTextHealthNoneCheckBox = homePage
+        var TextHealthNoneCheckBox = homePage
                 .hamburgerMenu()
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
@@ -330,11 +330,11 @@ public class AppointmentTest extends BaseTest{
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
                 .getTextHealthNoneCheckBox();
-        assertEquals(getTextHealthNoneCheckBox,"None");
+        assertEquals(TextHealthNoneCheckBox,"None");
     }
     @Test
     void test_HE_003_TC_15_Valid_Login_From_Hamburger_Menu_dont_write_comment() {
-        var getTextComment = homePage
+        var TextComment = homePage
                 .hamburgerMenu()
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
@@ -352,9 +352,9 @@ public class AppointmentTest extends BaseTest{
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
                 .getTextCommnet();
-        System.out.println("tisk"+ getTextComment);
+        System.out.println("tisk"+ TextComment);
 
-        assertEquals(getTextComment,"");
+        assertEquals(TextComment,"");
     }
-    
+
 }
