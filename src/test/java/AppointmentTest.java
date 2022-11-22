@@ -288,7 +288,7 @@ public class AppointmentTest extends BaseTest{
     }
     @Test
     void test_HE_003_TC_13_Valid_Login_From_Hamburger_Menu_Medial_Care_Medicaid() {
-        var TextHaelthMedicaidCheckBox = homePage
+        var textHaelthMedicaidCheckBox = homePage
                 .hamburgerMenu()
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
@@ -307,11 +307,11 @@ public class AppointmentTest extends BaseTest{
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
                 .getTextHaelthMedicaidCheckBox();
-        assertEquals(TextHaelthMedicaidCheckBox,"Medicaid");
+        assertEquals(textHaelthMedicaidCheckBox,"Medicaid");
     }
     @Test
     void test_HE_003_TC_14_Valid_Login_From_Hamburger_Menu_Medial_Care_None() {
-        var TextHealthNoneCheckBox = homePage
+        var textHealthNoneCheckBox = homePage
                 .hamburgerMenu()
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
@@ -330,11 +330,11 @@ public class AppointmentTest extends BaseTest{
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
                 .getTextHealthNoneCheckBox();
-        assertEquals(TextHealthNoneCheckBox,"None");
+        assertEquals(textHealthNoneCheckBox,"None");
     }
     @Test
     void test_HE_003_TC_15_Valid_Login_From_Hamburger_Menu_dont_write_comment() {
-        var TextComment = homePage
+        var textComment = homePage
                 .hamburgerMenu()
                 .loginFromHamburgerMenu()
                 .enterUserName(TestValues.TEST_VALID_USERNAME)
@@ -352,9 +352,9 @@ public class AppointmentTest extends BaseTest{
                 .clickHamburgerMenuSummaryPage()
                 .historyButton()
                 .getTextCommnet();
-        System.out.println("tisk"+ TextComment);
+        System.out.println("tisk"+ textComment);
 
-        assertEquals(TextComment,"");
+        assertEquals(textComment,"");
     }
 
 }
